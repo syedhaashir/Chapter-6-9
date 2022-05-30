@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+</head>
+<body>
+    Enter the Name of Subject 1: <input type="text" id="sub1"><br><br>
+    Enter the Marks of Subject 1: <input type="number" min="0" id="marks1"><br><br>
+    Enter the Name of Subject 2: <input type="text" id="sub2"><br><br>
+    Enter the Marks of Subject 2: <input type="number" min="0" id="marks2"><br><br>
+    Enter the Name of Subject 3: <input type="text" id="sub3"><br><br>
+    Enter the Marks of Subject 3: <input type="number" min="0" id="marks3"><br><br>
+    <h1> <u> Result Calculator </u></h1>
+    <table style="border-spacing:10px ;">
+        <tr>
+            <th>Subject</th>
+            <th>Total Marks</th>
+            <th>Obtained Marks</th>
+            <th>Percentage</th>
+        </tr>
+        <tr>
+            <td id="cell11"></td>
+            <td id="cell12">100</td>
+            <td id="cell13"></td>
+            <td id="cell14"></td>
+        </tr>
+        <tr>
+            <td id="cell21"></td>
+            <td id="cell22">100</td>
+            <td id="cell23"></td>
+            <td id="cell24"></td>
+        </tr>
+        <tr>
+            <td id="cell31"></td>
+            <td id="cell32">100</td>
+            <td id="cell33"></td>
+            <td id="cell34"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="border-top:3px solid black  ;" id="cell42">300</td>
+            <td style="border-top:3px solid black  ;" id="cell43"></td>
+            <td style="border-top:3px solid black  ;" id="cell44"></td>
+        </tr>
+    </table>
+    <button id="click" onclick="hashir();">Calculate</button>
+</body>
+<script>
+function hashir(){
+
+    let sub1 = document.getElementById("sub1").value;
+    let marks1 = +document.getElementById("marks1").value;
+    let totalMarks = 100;
+    let percent1 = Math.abs((marks1 / totalMarks) * 100);
+    document.getElementById('cell11').innerText = sub1;
+    document.getElementById('cell13').innerText = marks1;
+    document.getElementById('cell14').innerText = percent1;
+
+    let sub2 = document.getElementById("sub2").value;
+    let marks2 = +document.getElementById("marks2").value;
+    let percent2 = Math.abs((marks2 / totalMarks) * 100);
+    document.getElementById('cell21').innerText = sub2;
+    document.getElementById('cell23').innerText = marks2;
+    document.getElementById('cell24').innerText = percent2;
+    
+    let sub3 = document.getElementById("sub3").value;
+    let marks3 = +document.getElementById("marks3").value;
+    let percent3 = Math.abs((marks3 / totalMarks) * 100);
+    document.getElementById('cell31').innerText = sub3;
+    document.getElementById('cell33').innerText = marks3;
+    document.getElementById('cell34').innerText = percent3;
+
+    let totalObt=marks1+marks2+marks3;
+    document.getElementById('cell43').innerText = totalObt;
+    let totalPercent=(totalObt/totalMarks)*100;
+    document.getElementById('cell44').innerText = totalPercent;
+
+}    
+
+</script>
+</html>
